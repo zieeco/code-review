@@ -58,14 +58,11 @@ const saveEdittedTask = (task) => {
 
 const completedTask = (task) => {
   const input = task.querySelector('input');
-  const label = task.querySelector('label');
   const todoItem = storedToDos[task.id];
   if (input.checked) {
     todoItem.completed = true;
-    label.style.textDecoration = 'line-through';
   } else {
     todoItem.completed = false;
-    label.style.textDecoration = 'none';
   }
   localStorage.setItem('toDos', JSON.stringify(storedToDos));
   getToDos();
