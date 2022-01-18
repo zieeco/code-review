@@ -57,6 +57,7 @@ const saveEdittedTask = (task) => {
 };
 
 const completedTask = (task) => {
+  window.alert('Task Completed');
   const input = task.querySelector('input');
   const label = task.querySelector('label');
   const todoItem = storedToDos[task.id];
@@ -76,6 +77,7 @@ const resetIndexes = (arr) => arr.forEach((item, idx) => { item.index = idx + 1;
 const deleteTask = (task) => {
   const item = storedToDos[task];
   storedToDos = storedToDos.filter((todo) => todo !== item);
+  console.log(storedToDos);
   resetIndexes(storedToDos);
   localStorage.setItem('toDos', JSON.stringify(storedToDos));
   getToDos();
